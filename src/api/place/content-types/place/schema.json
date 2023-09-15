@@ -58,6 +58,9 @@
       "relation": "oneToMany",
       "target": "api::tag.tag",
       "mappedBy": "place"
+    },
+    "img": {
+      "type": "string"
     }
   }
 }

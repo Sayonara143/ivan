@@ -15,8 +15,8 @@ export default ({ env }) => ({
               // ... any custom nodemailer options
             },
             settings: {
-              defaultFrom: 'registration_takeframe@mail.ru',
-              defaultReplyTo: 'registration_takeframe@mail.ru',
+              defaultFrom: 'basediplom_no-reply@mail.ru',
+              defaultReplyTo: 'basediplom_no-reply@mail.ru',
             },
           },
         }

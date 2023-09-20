@@ -26,5 +26,11 @@ jobs:
           cd ~/server/ivan
           git pull origin master
           git status
-          npm install 
-          pm2 restart 0
+          rm -rf node_modules
+          rm package-lock.json
+          npm install
+          pm2 stop app
+          pm2 save
+          pm2 start npm --name app -- run start
+          pm2 status
+          pm2 save

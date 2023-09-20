@@ -27,7 +27,6 @@ jobs:
           git reset --hard
           git pull origin master
           git status
-          rm -rf node_modules
           rm -r data
           rm -r dist
           rm package-lock.json
@@ -36,6 +35,6 @@ jobs:
           pm2 stop app
           pm2 delete app
           pm2 save --force
-          pm2 start npm --name app -- run start
+          pm2 start npm --name app -- run develop
           pm2 status
           pm2 save --force

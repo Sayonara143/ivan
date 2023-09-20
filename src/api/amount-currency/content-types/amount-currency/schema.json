@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "amount_currencies",
+  "info": {
+    "singularName": "amount-currency",
+    "pluralName": "amount-currencies",
+    "displayName": "amountCurrency"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "amount": {
+      "type": "float"
+    },
+    "game": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::game.game",
+      "inversedBy": "amount_currency"
+    },
+    "place": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::place.place",
+      "inversedBy": "amount_currency"
+    }
+  }
+}

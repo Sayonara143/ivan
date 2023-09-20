@@ -45,6 +45,9 @@ export default {
                 throw Error('not found place by name')
               }
               if ('steambalance' === siteName) amount = amount.split(' ').join('')
+              await strapi.service('api::place.place').update(placesFiltered[0].id, {data: {
+                totalCountTransaction: parseInt(amount),
+              }})
               await strapi.service('api::stat.stat').create({
                 data: {
                   count_transaction: parseInt(amount),

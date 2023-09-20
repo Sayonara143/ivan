@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "posts",
+  "collectionName": "reports",
   "info": {
-    "singularName": "post",
-    "pluralName": "posts",
-    "displayName": "Post",
-    "description": ""
+    "singularName": "report",
+    "pluralName": "reports",
+    "displayName": "report"
   },
   "options": {
     "draftAndPublish": true
@@ -15,13 +14,10 @@
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "richtext"
-    },
-    "img": {
+    "email": {
       "type": "string"
     },
-    "shortDescription": {
+    "description": {
       "type": "text"
     }
   }

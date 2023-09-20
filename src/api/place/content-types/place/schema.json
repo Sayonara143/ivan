@@ -53,14 +53,20 @@
       "relation": "oneToOne",
       "target": "api::promo-code.promo-code"
     },
-    "tags": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::tag.tag",
-      "mappedBy": "place"
-    },
     "img": {
       "type": "string"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "mappedBy": "places"
+    },
+    "amount_currency": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::amount-currency.amount-currency",
+      "mappedBy": "place"
     }
   }
 }

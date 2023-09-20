@@ -15,7 +15,8 @@ siteNameToCssMap.set('icegames', '');
 siteNameToCssMap.set('codashop', '');
 
 const sitesWithTransactionsCount = new Set(["steambalance"]);
-
+const chromeOptions = new chrome.Options();
+chromeOptions.addArguments('--no-sandbox');
 let isStart = false
 export default {
     myJob: {
@@ -30,7 +31,7 @@ export default {
           let amount = ''
           for (const  siteName of sitesWithTransactionsCount) {
             if (sitesWithTransactionsCount.has(siteName)) {
-              let webdriver = await new Builder().forBrowser('chrome').setChromeOptions(new chrome.Options().headless()).build();
+              let webdriver = await new Builder().forBrowser('chrome').setChromeOptions(chromeOptions.headless()).build();
               await webdriver.get(siteNameToHostMap.get(siteName));
               amount = await webdriver.findElement(By.css(siteNameToCssMap.get(siteName))).getText();
               webdriver.quit()

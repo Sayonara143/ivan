@@ -29,6 +29,7 @@ jobs:
           rm -rf node_modules
           rm package-lock.json
           npm install
+          npm run build
           pm2 stop app
           pm2 delete app
           pm2 save

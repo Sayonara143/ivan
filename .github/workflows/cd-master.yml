@@ -32,6 +32,7 @@ jobs:
           rm -r dist
           rm package-lock.json
           npm install
+          npm i selenium-webdriver
           pm2 stop app
           pm2 delete app
           pm2 save --force

@@ -24,7 +24,17 @@ jobs:
         port: 22
         script: |
           cd ~/server/ivan
+          git reset --hard
           git pull origin master
           git status
-          npm install 
-          pm2 restart 0
+          rm -r data
+          rm -r dist
+          rm package-lock.json
+          npm install
+          npm i selenium-webdriver
+          pm2 stop app
+          pm2 delete app
+          pm2 save --force
+          pm2 start npm --name app -- run develop
+          pm2 status
+          pm2 save --force

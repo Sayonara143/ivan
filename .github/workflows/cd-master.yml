@@ -30,6 +30,7 @@ jobs:
           rm package-lock.json
           npm install
           pm2 stop app
+          pm2 delete app
           pm2 save
           pm2 start npm --name app -- run start
           pm2 status

@@ -32,7 +32,7 @@ jobs:
           npm run build
           pm2 stop app
           pm2 delete app
-          pm2 save
+          pm2 save --force
           pm2 start npm --name app -- run start
           pm2 status
-          pm2 save
+          pm2 save --force

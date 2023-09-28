@@ -4,7 +4,8 @@
   "info": {
     "singularName": "amount-currency",
     "pluralName": "amount-currencies",
-    "displayName": "amountCurrency"
+    "displayName": "amountCurrency",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,15 +17,18 @@
     },
     "game": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::game.game",
-      "inversedBy": "amount_currency"
+      "inversedBy": "amount_currencies"
     },
     "place": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::place.place",
-      "inversedBy": "amount_currency"
+      "inversedBy": "amount_currencies"
+    },
+    "amountCost": {
+      "type": "float"
     }
   }
 }

@@ -68,7 +68,7 @@ export default {
       },
       // only run once after 10 seconds
       options: {
-        rule: "*/1 * * * *",
+        rule: "*/20 * * * *",
         tz: "Europe/Moscow"
       },
     }

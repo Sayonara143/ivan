@@ -24,9 +24,9 @@
       "target": "api::place.place",
       "mappedBy": "games"
     },
-    "amount_currency": {
+    "amount_currencies": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::amount-currency.amount-currency",
       "mappedBy": "game"
     }
